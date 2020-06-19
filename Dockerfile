@@ -1,9 +1,3 @@
-# https://github.com/keckelt/openjdk11-alpine/blob/master/Dockerfile
-# https://github.com/daggerok/jboss-eap-7.2/blob/7.2.5-alpine/Dockerfile
-# https://github.com/Scalified/docker-jboss-eap/blob/master/Dockerfile
-# http://www-padraotic/index.php/pti-red-hat-jboss-eap-7/
-
-
 FROM alpine:3
 
 LABEL MAINTAINER="Paulo Rogério Sales Santos"
