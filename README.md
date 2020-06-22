@@ -4,8 +4,8 @@ Jboss EAP Docker imagens
 
 ## Supported tags and respective `Dockerfile` links
 
-* [`7.3.0`, `7.3.0-alpine`, `latest`](https://github.com/paulosales/docker-jboss/blob/master/Dockerfile) - JBoss EAP 7.3.0 over Openjdk 11 and Alpine Linux
-* [`7.2.0`, `7.2.0-alpine`](https://github.com/paulosales/docker-jboss/blob/master/Dockerfile) - JBoss EAP 7.2.0 over Openjdk 11 and Alpine Linux
+* [`7.3.0`, `7.3.0-alpine`, `latest`](https://github.com/paulosales/docker-jboss-eap/blob/master/7.3/Dockerfile) - JBoss EAP 7.3.0 over Openjdk 11 and Alpine Linux
+* [`7.2.0`, `7.2.0-alpine`](https://github.com/paulosales/docker-jboss-eap/blob/master/7.2/Dockerfile) - JBoss EAP 7.2.0 over Openjdk 11 and Alpine Linux
 
 ## Usage
 
