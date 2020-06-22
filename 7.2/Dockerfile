@@ -35,19 +35,22 @@ WORKDIR /tmp
 RUN wget ${JBOSS_ARCHIVE_URL} \
           -q --no-cookies --no-check-certificate -O /tmp/jboss-eap-7.2.0.zip && \
     unzip -q /tmp/jboss-eap-7.2.0.zip -d ${JBOSS_USER_HOME} && \
-    add-user.sh ${ADMIN_USER} ${ADMIN_PASSWORD} --silent && \
     echo 'JAVA_OPTS="-Djava.io.tmpdir=/tmp -Djava.net.preferIPv4Stack=true -Djboss.bind.address=0.0.0.0 -Djboss.bind.address.management=0.0.0.0"' \
      >> ${JBOSS_HOME}/bin/standalone.conf
 
 USER root
 
+WORKDIR ${JBOSS_USER_HOME}
+
+ADD --chown=jboss ./start.sh .
+
+RUN chmod +x start.sh
+
 RUN apk del --no-cache --no-network --purge busybox-suid unzip openssh-client shadow && \
     ( rm -rf /tmp/* /var/cache/apk /var/lib/apk /etc/apk/cache || echo "cleanup!" )
-
-WORKDIR ${JBOSS_USER_HOME}
 
 ENTRYPOINT ["/bin/ash", "-c"]
 
 EXPOSE 8080 8443 9990
 
-CMD ["${JBOSS_HOME}/bin/standalone.sh -b 0.0.0.0"]
+CMD ["${JBOSS_USER_HOME}/start.sh"]
