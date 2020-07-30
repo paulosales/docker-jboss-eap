@@ -37,13 +37,17 @@ services:
 
 The web application and the management console will be available in `http://localhost:8080` and `http://localhost:9990`
 
-## The default admin password
+## The default management user and password
 
-The default admin username is `admin` and his password is `Admin.123`. You can customize these by the respective environments variables `ADMIN_USER` and `ADMIN_PASSWORD` like that:
+The default management username is `admin` and his password is `Admin.123`. You can customize these by the respective environments variables `ADMIN_USER` and `ADMIN_PASSWORD` like that:
 
 ```bash
 docker run -p 8080:8080 -p 9990:9990 -p 8443:8443 -e ADMIN_USER="master" -e ADMIN_PASSWORD="passwd" -d prsales/jboss-eap:7.3-alpine
 ```
+
+## The optional application user and password
+
+Optionally, you can specify the application user and password to ApplicationRealm. You can do this by setting the environment variables `APP_USER`, `APP_PASSWORD`, and `APP_USER_ROLE`.
 
 ## JBOSS configuration
 
